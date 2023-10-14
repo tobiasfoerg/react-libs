@@ -9,7 +9,7 @@ export function createBreakpoint<T extends Config>(config: T) {
 	const screens = resolvedConfig.theme?.screens;
 
 	if (!screens) {
-		throw new Error("Screens not found in Tailwind config");
+		throw new Error("Screens not found in Tailwind config. Please ensure that Tailwind is configured properly.");
 	}
 
 	function useBreakpoint(breakpoint: "sm" | "md" | "lg" | "xl" | "2xl") {
@@ -26,7 +26,6 @@ export function createBreakpoint<T extends Config>(config: T) {
 		}, [matchMedia, breakpoint]);
 
 		const match = React.useSyncExternalStore<boolean>(subscribe, getSnapshot);
-
 		return match;
 	}
 
