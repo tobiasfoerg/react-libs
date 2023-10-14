@@ -30,6 +30,21 @@ importers:
         specifier: ^5.2.2
         version: 5.2.2
 
+  packages/compose-refs:
+    devDependencies:
+      '@types/react':
+        specifier: ^18.2.28
+        version: 18.2.28
+      publint:
+        specifier: ^0.2.4
+        version: 0.2.4
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      tsup:
+        specifier: ^7.2.0
+        version: 7.2.0(postcss@8.4.31)(typescript@5.2.2)
+
   packages/use-breakpoint:
     devDependencies:
       '@types/react':
