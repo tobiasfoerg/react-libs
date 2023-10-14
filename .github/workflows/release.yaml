@@ -1,0 +1,62 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+
+env:
+  CI: true
+
+jobs:
+  release:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - name: checkout code repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: setup node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: install dependencies
+        run: pnpm install
+
+      - name: build packages
+        run: pnpm build
+
+      - name: create .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            @tobiasfoerg:registry=https://npm.pkg.github.com/
+            //npm.pkg.github.com/:_authToken=${NPM_TOKEN}
+          EOF
+        env:
+          # Because we're publishing to Github we can use secrets.GITHUB_TOKEN for our NPM_TOKEN
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: create release pull request or publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: pnpm release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
