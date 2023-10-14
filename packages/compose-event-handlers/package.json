@@ -1,11 +1,11 @@
 {
 	"$schema": "https://json.schemastore.org/package",
-	"name": "@tobiasfoerg/compose-refs",
-	"version": "0.0.1",
+	"name": "@tobiasfoerg/compose-event-handlers",
+	"version": "0.0.0",
 	"repository": {
 		"type": "git",
 		"url": "ssh://git@github.com/tobiasfoerg/react-libs",
-		"directory": "packages/compose-refs"
+		"directory": "packages/compose-event-handlers"
 	},
 	"sideEffects": false,
 	"type": "module",
