@@ -17,7 +17,9 @@
 		}
 	},
 	"scripts": {
+		"prebuild": "pnpm clean",
 		"build": "tsup src/index.ts --format cjs,esm --dts --sourcemap --external react,tailwindcss --clean",
+		"clean": "rimraf dist",
 		"publint": "publint",
 		"typecheck": "tsc --noEmit"
 	},
@@ -25,6 +27,7 @@
 		"@types/react": "^18.2.29",
 		"publint": "^0.2.4",
 		"react": "^18.2.0",
+		"rimraf": "^5.0.5",
 		"tailwindcss": "^3.3.3",
 		"tsup": "^7.2.0"
 	},
@@ -40,7 +43,7 @@
 			"optional": false
 		}
 	},
-	"packageManager": "pnpm@8.9.0",
+	"packageManager": "pnpm@8.9.2",
 	"engines": {
 		"node": ">=18",
 		"pnpm": ">=8"
