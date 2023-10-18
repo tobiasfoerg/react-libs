@@ -4,6 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "pnpm --filter \"./packages/**\" build",
+		"clean": "pnpm --filter \"./packages/**\" clean",
 		"format": "prettier --write . --ignore-unknown",
 		"publint": "pnpm --filter \"./packages/**\" publint",
 		"release": "changeset publish"

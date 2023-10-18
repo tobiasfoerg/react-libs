@@ -1,14 +1,11 @@
 {
-  "mode": "pre",
-  "tag": "alpha",
-  "initialVersions": {
-    "@tobiasfoerg/compose-event-handlers": "0.0.0",
-    "@tobiasfoerg/compose-refs": "0.0.1-alpha.0",
-    "@tobiasfoerg/use-breakpoint": "0.0.1-alpha.0",
-    "@tobiasfoerg/conform-helper": "0.0.0"
-  },
-  "changesets": [
-    "selfish-seas-grin",
-    "soft-ligers-shake"
-  ]
+	"mode": "pre",
+	"tag": "alpha",
+	"initialVersions": {
+		"@tobiasfoerg/compose-event-handlers": "0.0.0",
+		"@tobiasfoerg/compose-refs": "0.0.1-alpha.0",
+		"@tobiasfoerg/use-breakpoint": "0.0.1-alpha.0",
+		"@tobiasfoerg/conform-helper": "0.0.0"
+	},
+	"changesets": ["selfish-seas-grin", "soft-ligers-shake"]
 }
