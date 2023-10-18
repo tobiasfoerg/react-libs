@@ -14,18 +14,16 @@ env:
 jobs:
   changes:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: read
     outputs:
       changesets: ${{ steps.filter.outputs.changesets }}
     steps:
-    - uses: dorny/paths-filter@v2
-      id: filter
-      with:
-        filters: |
-          changesets:
-            - '.changesets/**'
-
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            changesets:
+              - '.changesets/**'
 
   release:
     needs: changes
