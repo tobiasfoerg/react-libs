@@ -12,22 +12,8 @@ env:
   CI: true
 
 jobs:
-  changes:
-    runs-on: ubuntu-latest
-    outputs:
-      changesets: ${{ steps.filter.outputs.changesets }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: dorny/paths-filter@v2
-        id: filter
-        with:
-          filters: |
-            changesets:
-              - '.changeset/**'
-
   release:
     needs: changes
-    if: ${{ needs.changes.outputs.changesets == 'true' }}
     timeout-minutes: 15
     runs-on: ubuntu-latest
     permissions: write-all
