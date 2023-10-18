@@ -13,7 +13,6 @@ env:
 
 jobs:
   release:
-    needs: changes
     timeout-minutes: 15
     runs-on: ubuntu-latest
     permissions: write-all
