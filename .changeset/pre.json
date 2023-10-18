@@ -8,6 +8,7 @@
     "@tobiasfoerg/conform-helper": "0.0.0"
   },
   "changesets": [
-    "selfish-seas-grin"
+    "selfish-seas-grin",
+    "soft-ligers-shake"
   ]
 }
