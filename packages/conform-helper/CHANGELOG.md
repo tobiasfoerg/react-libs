@@ -1,5 +1,11 @@
 # @tobiasfoerg/conform-helper
 
+## 0.0.1-alpha.2
+
+### Patch Changes
+
+-   [#12](https://github.com/tobiasfoerg/react-libs/pull/12) [`afbbde2`](https://github.com/tobiasfoerg/react-libs/commit/afbbde29d39038f71217ec12fd648c3e24515848) Thanks [@tobiasfoerg](https://github.com/tobiasfoerg)! - bump version
+
 ## 0.0.1-alpha.1
 
 ### Patch Changes
