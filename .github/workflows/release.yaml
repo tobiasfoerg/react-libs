@@ -23,7 +23,7 @@ jobs:
         with:
           filters: |
             changesets:
-              - '.changesets/**'
+              - '.changeset/**'
 
   release:
     needs: changes
