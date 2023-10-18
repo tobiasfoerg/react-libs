@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@tobiasfoerg/conform-helper",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/tobiasfoerg/react-libs",
+    "directory": "packages/conform-helper"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --sourcemap --external react,@conform-to/dom --clean",
+    "publint": "publint",
+    "typecheck": "tsc --noEmit",
+    "test-ct": "playwright test -c playwright-ct.config.ts"
+  },
+  "devDependencies": {
+    "@conform-to/dom": "^0.9.0",
+    "@playwright/experimental-ct-react": "^1.39.0",
+    "@playwright/test": "^1.39.0",
+    "@types/node": "^20.8.6",
+    "@types/react": "^18.2.28",
+    "playwright": "^1.39.0",
+    "playwright-core": "^1.39.0",
+    "publint": "^0.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^7.2.0",
+    "type-fest": "^4.4.0"
+  },
+  "peerDependencies": {
+    "@conform-to/dom": "<=0.9 || <=1",
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "@conform-to/dom": {
+      "optional": false
+    },
+    "react": {
+      "optional": false
+    }
+  },
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
