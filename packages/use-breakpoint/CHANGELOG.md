@@ -1,5 +1,11 @@
 # @tobiasfoerg/use-breakpoint
 
+## 0.0.2-alpha.1
+
+### Patch Changes
+
+-   [#8](https://github.com/tobiasfoerg/react-libs/pull/8) [`646afc9`](https://github.com/tobiasfoerg/react-libs/commit/646afc9c0541614a19df351c5b63e37c802ff27f) Thanks [@tobiasfoerg](https://github.com/tobiasfoerg)! - bump version
+
 ## 0.0.2-alpha.0
 
 ### Patch Changes
