@@ -27,13 +27,15 @@ type FieldPath<T> = keyof T extends string
 		: keyof T
 	: never;
 
+type ParserFn<FieldValues> = (FormData: FormData) => FieldValues;
+
 export function useWatch<
 	FieldValues extends Record<string, any>,
 	Path extends FieldPath<FieldValues> = FieldPath<FieldValues>,
 >(
 	ref: React.RefObject<HTMLFormElement>,
 	path: Path,
-	parseFn: (formData: FormData) => FieldValues = (formData) => parse(formData).payload as FieldValues,
+	parseFn: ParserFn<FieldValues> = (formData) => parse(formData).payload as FieldValues,
 ) {
 	function getSnapshot() {
 		if (!ref.current) {
