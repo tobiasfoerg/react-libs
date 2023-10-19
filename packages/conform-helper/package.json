@@ -33,6 +33,7 @@
 		"build": "tsup",
 		"clean": "rimraf ./dist && rimraf ./coverage",
 		"test:build": "publint --strict",
+		"test:eslint": "eslint ./src",
 		"test:types": "tsc --noEmit"
 	},
 	"devDependencies": {
