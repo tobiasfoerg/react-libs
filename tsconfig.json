@@ -8,8 +8,11 @@
 		"allowJs": true,
 		"resolveJsonModule": true,
 		"moduleDetection": "force",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
 
 		"strict": true,
 		"noUncheckedIndexedAccess": true
-	}
+	},
+	"include": ["scripts"]
 }

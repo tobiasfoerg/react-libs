@@ -11,32 +11,36 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
-		}
+			"import": {
+				"types": "./dist/modern/index.d.ts",
+				"default": "./dist/modern/index.js"
+			},
+			"require": {
+				"types": "./dist/modern/index.d.cts",
+				"default": "./dist/modern/index.cjs"
+			}
+		},
+		"./package.json": "./package.json"
 	},
+	"main": "./dist/legacy/index.cjs",
+	"module": "./dist/legacy/index.js",
+	"types": "./dist/legacy/index.d.ts",
+	"files": [
+		"dist",
+		"src"
+	],
 	"scripts": {
-		"prebuild": "pnpm clean",
-		"build": "tsup src/index.ts --format cjs,esm --dts --sourcemap --external react,@conform-to/dom --clean",
-		"clean": "rimraf dist",
-		"publint": "publint",
-		"test-ct": "playwright test -c playwright-ct.config.ts",
-		"typecheck": "tsc --noEmit"
+		"build": "tsup",
+		"clean": "rimraf ./dist && rimraf ./coverage",
+		"test:build": "publint --strict",
+		"test:types": "tsc --noEmit"
 	},
 	"devDependencies": {
 		"@conform-to/dom": "^0.9.0",
-		"@playwright/experimental-ct-react": "^1.39.0",
-		"@playwright/test": "^1.39.0",
 		"@types/node": "^20.8.7",
 		"@types/react": "^18.2.29",
-		"playwright": "^1.39.0",
-		"playwright-core": "^1.39.0",
-		"publint": "^0.2.4",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"rimraf": "^5.0.5",
-		"tsup": "^7.2.0",
 		"type-fest": "^4.5.0"
 	},
 	"peerDependencies": {

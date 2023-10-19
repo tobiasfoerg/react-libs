@@ -1,0 +1,40 @@
+{
+	"name": "Node.js & TypeScript",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+			"plugins": "zsh-autosuggestions zsh-syntax-highlighting",
+			"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions https://github.com/zsh-users/zsh-syntax-highlighting"
+		},
+		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
+		"ghcr.io/joshuanianji/devcontainer-features/github-cli-persistence:0": {}
+	},
+	"containerEnv": {
+		"EDITOR": "code --wait",
+		"PNPM_HOME": "/home/node/.local/share/pnpm"
+	},
+	"remoteEnv": {
+		"PATH": "${containerEnv:PNPM_HOME}:${containerEnv:PATH}"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"esbenp.prettier-vscode",
+				"bradlc.vscode-tailwindcss",
+				"redhat.vscode-yaml",
+				"formulahendry.auto-rename-tag",
+				"christian-kohler.npm-intellisense",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"christian-kohler.path-intellisense",
+				"dbaeumer.vscode-eslint",
+				"GitHub.copilot",
+				"ZixuanChen.vitest-explorer"
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"vitest.enable": true
+			}
+		}
+	}
+}
