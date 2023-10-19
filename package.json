@@ -1,23 +1,25 @@
 {
 	"name": "react-libs",
 	"version": "1.0.0",
-	"type": "module",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"build": "pnpm --filter \"./packages/**\" build",
 		"clean": "pnpm --filter \"./packages/**\" clean",
 		"prettier": "prettier \"{packages,config}/**/*.{md,js,jsx,cjs,ts,tsx,json}\"",
 		"prettier:write": "pnpm prettier --write",
+		"release": "changeset publish",
 		"test:build": "pnpm --filter \"./packages/**\" test:build",
-		"test:types": "pnpm --filter \"./packages/**\" test:types",
-		"test:workspace": "vitest",
+		"test:ci": "pnpm run --stream \"/^test:(types|workspace|build)$/\" ",
 		"test:coverage": "vitest --coverage",
-		"test:workspace:dev": "pnpm test:workspace --watch",
-		"release": "changeset publish"
+		"test:types": "pnpm --filter \"./packages/**\" test:types",
+		"test:workspace": "vitest"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "^0.4.8",
 		"@changesets/cli": "^2.26.2",
+		"@testing-library/jest-dom": "^6.1.4",
+		"@testing-library/react": "^14.0.0",
 		"@vitest/coverage-istanbul": "^1.0.0-beta.2",
 		"@vitest/ui": "1.0.0-beta.2",
 		"esbuild-plugin-file-path-extensions": "^1.0.0",

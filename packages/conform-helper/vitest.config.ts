@@ -6,5 +6,6 @@ export default defineProject({
 		name: pkg.name,
 		root: "./src",
 		environment: "jsdom",
+		setupFiles: ["../../scripts/setup-tests.ts"],
 	},
 });

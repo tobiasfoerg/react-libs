@@ -4,10 +4,10 @@ export default defineConfig({
 	test: {
 		watch: false,
 		coverage: {
-            all: true,
+			all: true,
 			provider: "istanbul",
 			include: ["packages/**/src/**/*.ts"],
-            exclude: ["**/dist", "**/coverage"]
+			exclude: ["**/dist", "**/coverage"],
 		},
 	},
 });

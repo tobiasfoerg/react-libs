@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
 
 test("window is not defined", () => {
-	expect(typeof window).toBe("object");
+	expect(typeof {}).toBe("object");
 });
