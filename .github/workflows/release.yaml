@@ -31,21 +31,19 @@ jobs:
       - name: setup node.js
         uses: actions/setup-node@v3
         with:
-          registry-url: 'https://npm.pkg.github.com'
+          registry-url: https://npm.pkg.github.com
           node-version: 18
           cache: pnpm
 
       - name: install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: build packages
         run: pnpm build
 
-      - name: create release pull request or publish to npm
-        id: changesets
+      - name: create release pull request or publish to github packages
         uses: changesets/action@v1
         with:
-          # This expects you to have a script called release which does a build for your packages and calls changeset publish
           publish: pnpm release
           commit: "chore: Update version for release"
           title: "chore: Update version for release"
