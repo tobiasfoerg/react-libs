@@ -39,7 +39,7 @@
 	"devDependencies": {
 		"@conform-to/dom": "^0.9.0",
 		"@types/node": "^20.8.7",
-		"@types/react": "^18.2.29",
+		"@types/react": "^18.2.31",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"type-fest": "^4.5.0"
