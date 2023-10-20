@@ -23,6 +23,9 @@ importers:
       '@testing-library/react':
         specifier: ^14.0.0
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
+      '@types/eslint':
+        specifier: ^8.44.6
+        version: 8.44.6
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.8.0
         version: 6.8.0(@typescript-eslint/parser@6.8.0)(eslint@8.51.0)(typescript@5.2.2)
@@ -47,6 +50,9 @@ importers:
       eslint-plugin-react:
         specifier: ^7.33.2
         version: 7.33.2(eslint@8.51.0)
+      eslint-plugin-react-hooks:
+        specifier: ^4.6.0
+        version: 4.6.0(eslint@8.51.0)
       globals:
         specifier: ^13.23.0
         version: 13.23.0
@@ -128,6 +134,18 @@ importers:
       tailwindcss:
         specifier: ^3.3.3
         version: 3.3.3
+
+  packages/use-local-storage:
+    devDependencies:
+      '@types/node':
+        specifier: ^20.8.7
+        version: 20.8.7
+      '@types/react':
+        specifier: ^18.2.29
+        version: 18.2.29
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
 
 packages:
 
@@ -999,6 +1017,17 @@ packages:
 
   /@types/aria-query@5.0.3:
     resolution: {integrity: sha512-0Z6Tr7wjKJIk4OUEjVUQMtyunLDy339vcMaj38Kpj6jM2OE1p3S4kXExKZ7a3uXQAPCoy3sbrP1wibDKaf39oA==}
+    dev: true
+
+  /@types/eslint@8.44.6:
+    resolution: {integrity: sha512-P6bY56TVmX8y9J87jHNgQh43h6VVU+6H7oN7hgvivV81K2XY8qJZ5vqPy/HdUoVIelii2kChYVzQanlswPWVFw==}
+    dependencies:
+      '@types/estree': 1.0.3
+      '@types/json-schema': 7.0.14
+    dev: true
+
+  /@types/estree@1.0.3:
+    resolution: {integrity: sha512-CS2rOaoQ/eAgAfcTfq6amKG7bsN+EMcgGY4FAFQdvSj2y1ixvOZTUA9mOtCai7E1SYu283XNw7urKK30nP3wkQ==}
     dev: true
 
   /@types/is-ci@3.0.2:
@@ -2167,6 +2196,15 @@ packages:
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
+    dependencies:
+      eslint: 8.51.0
+    dev: true
+
+  /eslint-plugin-react-hooks@4.6.0(eslint@8.51.0):
+    resolution: {integrity: sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
     dependencies:
       eslint: 8.51.0
     dev: true
