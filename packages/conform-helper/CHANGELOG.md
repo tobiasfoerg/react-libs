@@ -1,5 +1,11 @@
 # @tobiasfoerg/conform-helper
 
+## 0.0.1-alpha.3
+
+### Patch Changes
+
+-   [#17](https://github.com/tobiasfoerg/react-libs/pull/17) [`70098b3`](https://github.com/tobiasfoerg/react-libs/commit/70098b394446216b966a700d73fab24693152805) Thanks [@tobiasfoerg](https://github.com/tobiasfoerg)! - refactor event listeners
+
 ## 0.0.1-alpha.2
 
 ### Patch Changes
