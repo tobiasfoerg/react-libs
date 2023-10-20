@@ -69,8 +69,8 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6(prettier@3.0.3)
       publint:
-        specifier: ^0.2.4
-        version: 0.2.4
+        specifier: ^0.2.5
+        version: 0.2.5
       rimraf:
         specifier: ^5.0.5
         version: 5.0.5
@@ -4121,8 +4121,8 @@ packages:
     resolution: {integrity: sha512-E/ZsdU4HLs/68gYzgGTkMicWTLPdAftJLfJFlLUAAKZGkStNU72sZjT66SnMDVOfOWY/YAoiD7Jxa9iHvngcag==}
     dev: true
 
-  /publint@0.2.4:
-    resolution: {integrity: sha512-5izPDOvD4F04nIraWEIttIc8V5mXMiM53xNxnFdwiGIOQJnsBE8DaYD7OaW85GcehlST3RohczKgn84VGdW9mA==}
+  /publint@0.2.5:
+    resolution: {integrity: sha512-eoQiP0WXkxkpth1fMLoS1I/6BQoxKNZxTAAnFjPgURFrJulC5D5Uifk49a9kfNCYmcza9E/ZkbFhQQdjkmKAbg==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
