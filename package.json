@@ -14,7 +14,7 @@
 		"test:coverage": "vitest --coverage",
 		"test:eslint": "pnpm --filter \"./packages/**\" test:eslint",
 		"test:types": "pnpm --filter \"./packages/**\" test:types",
-		"test:workspace": "vitest"
+		"test:workspace": "pnpm --filter \"./packages/**\"  test:lib"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "^0.4.8",
@@ -22,6 +22,7 @@
 		"@eslint/js": "^8.51.0",
 		"@testing-library/jest-dom": "^6.1.4",
 		"@testing-library/react": "^14.0.0",
+		"@types/eslint": "^8.44.6",
 		"@typescript-eslint/eslint-plugin": "^6.8.0",
 		"@typescript-eslint/parser": "^6.8.0",
 		"@vitest/coverage-istanbul": "^1.0.0-beta.2",
@@ -30,6 +31,7 @@
 		"eslint": "^8.51.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-react": "^7.33.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
 		"globals": "^13.23.0",
 		"jsdom": "^22.1.0",
 		"prettier": "^3.0.3",

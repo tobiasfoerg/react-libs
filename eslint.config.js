@@ -2,15 +2,20 @@ import globals from "globals";
 import js from "@eslint/js";
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
-import pretierConfig from "eslint-config-prettier";
+import prettierConfig from "eslint-config-prettier";
 import reactPlugin from "eslint-plugin-react";
-import reactConfigRecommended from "eslint-plugin-react/configs/recommended.js";
+import reactHooksPlugin from "eslint-plugin-react-hooks";
+
+const LEVEL = {
+	OFF: 0,
+	WARN: 1,
+	ERROR: 2,
+};
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
 	js.configs.recommended,
-	pretierConfig,
-	reactConfigRecommended,
+	prettierConfig,
 	{
 		files: ["**/*.js"],
 		languageOptions: {
@@ -39,14 +44,21 @@ export default [
 			},
 		},
 		rules: {
-			"no-unused-vars": "off",
-			"@typescript-eslint/no-unused-vars": ["error"],
+			"no-redeclare": LEVEL.OFF,
+			"no-unused-vars": LEVEL.OFF,
+			"@typescript-eslint/no-unused-vars": LEVEL.ERROR,
 		},
 	},
 	{
 		files: ["**/*.{ts,tsx}"],
 		plugins: {
-			reactPlugin,
+			react: reactPlugin,
+			"react-hooks": reactHooksPlugin,
+		},
+		settings: {
+			react: {
+				version: "detect",
+			},
 		},
 		languageOptions: {
 			parserOptions: {
@@ -59,8 +71,8 @@ export default [
 			},
 		},
 		rules: {
-			"react/jsx-uses-react": "error",
-			"react/jsx-uses-vars": "error",
+			...reactPlugin.configs.recommended.rules,
+			...reactHooksPlugin.configs.recommended.rules,
 		},
 	},
 ];

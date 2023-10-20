@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"lib": ["es2022", "dom", "dom.iterable"],
+
+		"moduleResolution": "Bundler",
+		"module": "ESNext",
+		"noEmit": true,
+
+		"declaration": true,
+		"sourceMap": true,
+		"declarationMap": true,
+
+		"jsx": "preserve"
+	},
+	"include": ["."],
+	"exclude": ["node_modules", "dist"]
+}
