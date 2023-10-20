@@ -31,6 +31,7 @@ jobs:
       - name: setup node.js
         uses: actions/setup-node@v3
         with:
+          registry-url: 'https://npm.pkg.github.com'
           node-version: 18
           cache: pnpm
 
@@ -39,16 +40,6 @@ jobs:
 
       - name: build packages
         run: pnpm build
-
-      - name: create .npmrc
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            @tobiasfoerg:registry=https://npm.pkg.github.com/
-            //npm.pkg.github.com/:_authToken=${NPM_TOKEN}
-          EOF
-        env:
-          # Because we're publishing to Github we can use secrets.GITHUB_TOKEN for our NPM_TOKEN
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: create release pull request or publish to npm
         id: changesets
@@ -60,3 +51,4 @@ jobs:
           title: "chore: Update version for release"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
