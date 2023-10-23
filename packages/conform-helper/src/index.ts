@@ -45,7 +45,7 @@ export function useWatch<
 		const formData = new FormData(ref.current);
 		const paths = getPaths(path);
 
-		let current: any = parseFn(formData).payload;
+		let current: any = parseFn(formData);
 		while (paths.length > 0) {
 			try {
 				const path = paths.shift()!;
@@ -54,7 +54,6 @@ export function useWatch<
 					return undefined;
 				}
 			} catch (error) {
-				console.warn(error);
 				return undefined;
 			}
 		}
