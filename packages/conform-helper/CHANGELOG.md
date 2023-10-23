@@ -1,5 +1,11 @@
 # @tobiasfoerg/conform-helper
 
+## 0.0.3
+
+### Patch Changes
+
+-   [`ee3aefd`](https://github.com/tobiasfoerg/react-libs/commit/ee3aefdffcdcadb1847f4f95be9cbadb3539fffd) Thanks [@tobiasfoerg](https://github.com/tobiasfoerg)! - fix
+
 ## 0.0.2
 
 ### Patch Changes
