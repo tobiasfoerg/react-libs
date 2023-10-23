@@ -47,9 +47,14 @@ export function useWatch<
 
 		let current: any = parseFn(formData).payload;
 		while (paths.length > 0) {
-			const path = paths.shift()!;
-			current = current[path];
-			if (!current) {
+			try {
+				const path = paths.shift()!;
+				current = current[path];
+				if (!current) {
+					return undefined;
+				}
+			} catch (error) {
+				console.warn(error);
 				return undefined;
 			}
 		}
