@@ -1,5 +1,11 @@
 # @tobiasfoerg/conform-helper
 
+## 0.0.2
+
+### Patch Changes
+
+-   [`e45ba0c`](https://github.com/tobiasfoerg/react-libs/commit/e45ba0cb6058efc9f9a59e54e1b2b932dc1f85ff) Thanks [@tobiasfoerg](https://github.com/tobiasfoerg)! - fix undefined error
+
 ## 0.0.1
 
 ### Patch Changes
