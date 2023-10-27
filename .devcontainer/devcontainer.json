@@ -11,11 +11,7 @@
 		"ghcr.io/joshuanianji/devcontainer-features/github-cli-persistence:0": {}
 	},
 	"containerEnv": {
-		"EDITOR": "code --wait",
-		"PNPM_HOME": "/home/node/.local/share/pnpm"
-	},
-	"remoteEnv": {
-		"PATH": "${containerEnv:PNPM_HOME}:${containerEnv:PATH}"
+		"EDITOR": "code --wait"
 	},
 	"customizations": {
 		"vscode": {
