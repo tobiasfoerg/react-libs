@@ -15,8 +15,8 @@ importers:
         specifier: ^2.26.2
         version: 2.26.2
       '@eslint/js':
-        specifier: ^8.51.0
-        version: 8.51.0
+        specifier: ^8.53.0
+        version: 8.53.0
       '@testing-library/jest-dom':
         specifier: ^6.1.4
         version: 6.1.4(vitest@1.0.0-beta.2)
@@ -808,6 +808,11 @@ packages:
 
   /@eslint/js@8.51.0:
     resolution: {integrity: sha512-HxjQ8Qn+4SI3/AFv6sOrDB+g6PpUTDwSJiQqOrnneEk8L71161srI9gjzzZvYVbzHiVg/BvcH95+cK/zfIt4pg==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: true
+
+  /@eslint/js@8.53.0:
+    resolution: {integrity: sha512-Kn7K8dx/5U6+cT1yEhpX1w4PCSg0M+XyRILPgvwcEBjerFWCwQj5sbr3/VmxqV0JGHCBCzyd6LxypEuehypY1w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
